@@ -1,0 +1,2 @@
+Pon aquí una carpeta por emprendimiento con su id (ej. fotos/arepas-la-sabanera/1.jpg, 2.jpg, 3.jpg).
+Máximo ~1200 px de ancho y menos de 300 KB por foto.

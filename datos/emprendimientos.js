@@ -1,0 +1,112 @@
+/* =========================================================
+   EMPRENDIMIENTOS DE LA VITRINA
+   Datos de EJEMPLO para la maqueta (ejemplo: true).
+   Para reemplazarlos con los reales, usa scripts/csv-a-js.mjs
+   (ver README.md) o edita este archivo a mano.
+
+   Campos:
+   id          identificador sin espacios (también nombre de su carpeta en /fotos)
+   nombre      nombre del emprendimiento
+   categoria   una de las categorías de datos/config.js
+   descripcion máximo ~200 caracteres
+   estudiante  nombre de quien lo presenta
+   programa    programa académico
+   whatsapp    número con indicativo, solo dígitos (ej. 573001234567)
+   instagram / facebook / tiktok   usuario (@usuario) o enlace completo
+   web         enlace a página web o tienda (opcional)
+   fotos       lista de rutas: ["fotos/mi-id/1.jpg", ...] o enlaces https
+   ========================================================= */
+window.EMPRENDIMIENTOS = [
+  { id: "arepas-la-sabanera", ejemplo: true, nombre: "Arepas La Sabanera", categoria: "Gastronomía",
+    descripcion: "Arepas boyacenses rellenas, hechas a mano y entregadas calientes a domicilio en Suba y Engativá.",
+    estudiante: "Laura Méndez", programa: "Administración de Empresas",
+    whatsapp: "573000000001", instagram: "@arepaslasabanera", facebook: "arepaslasabanera", tiktok: "", web: "", fotos: [] },
+  { id: "dulce-antojo", ejemplo: true, nombre: "Dulce Antojo Repostería", categoria: "Gastronomía",
+    descripcion: "Tortas personalizadas, cupcakes y mesas de postres por encargo para cumpleaños y eventos.",
+    estudiante: "Daniela Rojas", programa: "Contaduría Pública",
+    whatsapp: "573000000002", instagram: "@dulceantojo.bog", facebook: "", tiktok: "@dulceantojo", web: "", fotos: [] },
+  { id: "cafe-origen-huila", ejemplo: true, nombre: "Café Origen Huila", categoria: "Gastronomía",
+    descripcion: "Café de especialidad de nuestra finca familiar en Pitalito. Tostión media, en grano o molido.",
+    estudiante: "Andrés Perdomo", programa: "Marketing y Publicidad",
+    whatsapp: "573000000003", instagram: "@cafeorigenhuila", facebook: "cafeorigenhuila", tiktok: "", web: "", fotos: [] },
+  { id: "snack-fit", ejemplo: true, nombre: "Snack Fit Bogotá", categoria: "Salud y bienestar",
+    descripcion: "Granolas, barras de avena y mezclas de frutos secos sin azúcar añadida para oficinas y gimnasios.",
+    estudiante: "Camila Torres", programa: "Administración de Empresas",
+    whatsapp: "573000000004", instagram: "@snackfitbog", facebook: "", tiktok: "@snackfitbog", web: "", fotos: [] },
+  { id: "manos-de-raquira", ejemplo: true, nombre: "Manos de Ráquira", categoria: "Artesanías y decoración",
+    descripcion: "Cerámica artesanal de Ráquira: materas, vajillas y piezas decorativas hechas por mi familia.",
+    estudiante: "Jhon Fredy Castro", programa: "Administración de Empresas",
+    whatsapp: "573000000005", instagram: "@manosderaquira", facebook: "manosderaquira", tiktok: "", web: "", fotos: [] },
+  { id: "velas-lumen", ejemplo: true, nombre: "Velas Lumen", categoria: "Artesanías y decoración",
+    descripcion: "Velas de cera de soya aromatizadas con esencias naturales, en frascos reutilizables.",
+    estudiante: "Valentina Ríos", programa: "Marketing y Publicidad",
+    whatsapp: "573000000006", instagram: "@velaslumen", facebook: "", tiktok: "@velaslumen", web: "", fotos: [] },
+  { id: "raiz-macrame", ejemplo: true, nombre: "Raíz Macramé", categoria: "Artesanías y decoración",
+    descripcion: "Tapices, porta materas y llaveros en macramé tejidos a mano. Hacemos pedidos personalizados.",
+    estudiante: "Natalia Suárez", programa: "Contaduría Pública",
+    whatsapp: "573000000007", instagram: "@raizmacrame", facebook: "", tiktok: "", web: "", fotos: [] },
+  { id: "urbana-streetwear", ejemplo: true, nombre: "Urbana Streetwear", categoria: "Moda y accesorios",
+    descripcion: "Camisetas y buzos oversize con estampados de diseño propio inspirados en Bogotá.",
+    estudiante: "Sebastián Gómez", programa: "Marketing y Publicidad",
+    whatsapp: "573000000008", instagram: "@urbana.sw", facebook: "", tiktok: "@urbanasw", web: "", fotos: [] },
+  { id: "bisuteria-alma", ejemplo: true, nombre: "Bisutería Alma", categoria: "Moda y accesorios",
+    descripcion: "Aretes, collares y pulseras en acero inoxidable y piedras naturales. Envíos a todo el país.",
+    estudiante: "María José Peña", programa: "Administración de Empresas",
+    whatsapp: "573000000009", instagram: "@bisuteria.alma", facebook: "bisuteriaalma", tiktok: "", web: "", fotos: [] },
+  { id: "segunda-vuelta", ejemplo: true, nombre: "Segunda Vuelta", categoria: "Moda y accesorios",
+    descripcion: "Ropa de segunda mano seleccionada y en excelente estado. Moda circular a buen precio.",
+    estudiante: "Paula Andrea Vargas", programa: "Marketing y Publicidad",
+    whatsapp: "573000000010", instagram: "@segundavuelta.co", facebook: "", tiktok: "@segundavueltaco", web: "", fotos: [] },
+  { id: "cuero-nativo", ejemplo: true, nombre: "Cuero Nativo", categoria: "Moda y accesorios",
+    descripcion: "Bolsos, billeteras y correas en cuero legítimo, fabricados en taller propio del barrio Restrepo.",
+    estudiante: "Carlos Bermúdez", programa: "Contaduría Pública",
+    whatsapp: "573000000011", instagram: "@cueronativo", facebook: "cueronativo", tiktok: "", web: "", fotos: [] },
+  { id: "glow-natural", ejemplo: true, nombre: "Glow Natural", categoria: "Belleza y cuidado personal",
+    descripcion: "Jabones artesanales, exfoliantes y bálsamos con ingredientes naturales y empaques sin plástico.",
+    estudiante: "Juliana Ortiz", programa: "Administración de Empresas",
+    whatsapp: "573000000012", instagram: "@glownatural.co", facebook: "", tiktok: "@glownatural", web: "", fotos: [] },
+  { id: "nails-by-vale", ejemplo: true, nombre: "Nails by Vale", categoria: "Belleza y cuidado personal",
+    descripcion: "Manicure y pedicure semipermanente a domicilio. Diseños personalizados y agenda flexible.",
+    estudiante: "Valeria Moreno", programa: "Contaduría Pública",
+    whatsapp: "573000000013", instagram: "@nailsbyvale", facebook: "", tiktok: "", web: "", fotos: [] },
+  { id: "barberia-el-parche", ejemplo: true, nombre: "Barbería Móvil El Parche", categoria: "Belleza y cuidado personal",
+    descripcion: "Cortes y arreglo de barba a domicilio o en empresa. Planes para grupos y eventos.",
+    estudiante: "Kevin Ramírez", programa: "Administración de Empresas",
+    whatsapp: "573000000014", instagram: "@elparchebarber", facebook: "", tiktok: "@elparchebarber", web: "", fotos: [] },
+  { id: "tecnofix", ejemplo: true, nombre: "TecnoFix", categoria: "Tecnología",
+    descripcion: "Reparación de celulares y computadores, cambio de pantallas y mantenimiento preventivo.",
+    estudiante: "Diego Hernández", programa: "Ingeniería de Sistemas",
+    whatsapp: "573000000015", instagram: "@tecnofix.bog", facebook: "tecnofixbog", tiktok: "", web: "", fotos: [] },
+  { id: "codea-web", ejemplo: true, nombre: "Codea Web", categoria: "Tecnología",
+    descripcion: "Páginas web, tiendas virtuales y catálogos digitales para pequeños negocios y emprendedores.",
+    estudiante: "Santiago Pardo", programa: "Ingeniería de Sistemas",
+    whatsapp: "573000000016", instagram: "@codeaweb", facebook: "", tiktok: "", web: "", fotos: [] },
+  { id: "prisma-3d", ejemplo: true, nombre: "Prisma 3D", categoria: "Tecnología",
+    descripcion: "Impresión 3D de prototipos, repuestos, figuras y regalos personalizados.",
+    estudiante: "Felipe Acosta", programa: "Ingeniería de Sistemas",
+    whatsapp: "573000000017", instagram: "@prisma3d.co", facebook: "", tiktok: "@prisma3d", web: "", fotos: [] },
+  { id: "contable-express", ejemplo: true, nombre: "Contable Express", categoria: "Servicios profesionales",
+    descripcion: "Asesoría contable y tributaria para microempresas: facturación electrónica, RUT y declaraciones.",
+    estudiante: "Luisa Fernanda Cárdenas", programa: "Contaduría Pública",
+    whatsapp: "573000000018", instagram: "@contableexpress", facebook: "contableexpress", tiktok: "", web: "", fotos: [] },
+  { id: "lente-vivo", ejemplo: true, nombre: "Lente Vivo Estudio", categoria: "Servicios profesionales",
+    descripcion: "Fotografía de producto y contenido para redes sociales de emprendimientos y marcas locales.",
+    estudiante: "Mateo Salazar", programa: "Marketing y Publicidad",
+    whatsapp: "573000000019", instagram: "@lentevivo.estudio", facebook: "", tiktok: "@lentevivo", web: "", fotos: [] },
+  { id: "pixel-y-marca", ejemplo: true, nombre: "Pixel & Marca", categoria: "Servicios profesionales",
+    descripcion: "Diseño de logo, identidad de marca y manejo de redes sociales para pequeños negocios.",
+    estudiante: "Isabella Quintero", programa: "Marketing y Publicidad",
+    whatsapp: "573000000020", instagram: "@pixelymarca", facebook: "pixelymarca", tiktok: "", web: "", fotos: [] },
+  { id: "huellitas-gourmet", ejemplo: true, nombre: "Huellitas Gourmet", categoria: "Mascotas",
+    descripcion: "Galletas y snacks horneados para perros con ingredientes naturales. Tortas para cumpleaños perrunos.",
+    estudiante: "Angie Lozano", programa: "Administración de Empresas",
+    whatsapp: "573000000021", instagram: "@huellitasgourmet", facebook: "", tiktok: "@huellitasgourmet", web: "", fotos: [] },
+  { id: "pet-spa-rodante", ejemplo: true, nombre: "Pet Spa Rodante", categoria: "Mascotas",
+    descripcion: "Baño, corte y peluquería para mascotas en una unidad móvil que llega hasta tu casa.",
+    estudiante: "Cristian Muñoz", programa: "Contaduría Pública",
+    whatsapp: "573000000022", instagram: "@petsparodante", facebook: "petsparodante", tiktok: "", web: "", fotos: [] },
+  { id: "mente-en-calma", ejemplo: true, nombre: "Mente en Calma", categoria: "Salud y bienestar",
+    descripcion: "Kits de autocuidado y clases virtuales de yoga y respiración para estudiantes y trabajadores.",
+    estudiante: "Sofía Castañeda", programa: "Marketing y Publicidad",
+    whatsapp: "573000000023", instagram: "@menteencalma.co", facebook: "", tiktok: "", web: "", fotos: [] }
+];
