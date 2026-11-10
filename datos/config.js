@@ -5,8 +5,11 @@ window.CONFIG = {
   // true = muestra el aviso de "maqueta con datos de ejemplo".
   modoMaqueta: false,
 
-  // Enlace al formulario de inscripción. Vacío = inscripciones cerradas.
+  // Enlace al formulario de inscripción de emprendimientos. Vacío = inscripciones cerradas.
   enlaceFormulario: "",
+
+  // Formulario de registro de asistentes a la semana (botón "Regístrate").
+  formularioRegistro: "https://docs.google.com/forms/d/e/1FAIpQLSfJFgTwD5WYIM07fn4PqsXTLQ_df8NguhlGE8QaL8JJDNe8yQ/viewform",
 
   // Mensaje que se precarga al abrir WhatsApp desde la vitrina.
   mensajeWhatsApp:

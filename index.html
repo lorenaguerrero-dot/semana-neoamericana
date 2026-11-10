@@ -236,6 +236,21 @@ dialog[open]{animation:up .28s ease-out}
 .day-head b{display:block;font:800 1.15rem/1.1 var(--display);text-transform:uppercase}
 .day-head small{display:block;font-size:.8rem;color:var(--muted)}
 .day-intro{margin:0;font-size:.9rem;color:var(--muted);max-width:52ch}
+.meet{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meet .btn{padding:11px 16px 9px;font-size:.9rem;background:var(--c);color:#fff;box-shadow:none}
+.meet .btn:hover{filter:brightness(.92)}
+.meet .btn svg{width:18px;height:18px;margin-top:-2px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.meet code{font:600 .82rem var(--body);color:var(--muted);user-select:all;word-break:break-all}
+.reg{display:grid;gap:14px;align-items:center;border:2px solid var(--fg);border-radius:var(--r);padding:18px;margin-bottom:24px;background:linear-gradient(110deg,#fff4ee,#eef7ff 70%)}
+.reg b{display:block;font:800 1.3rem/1.1 var(--display);text-transform:uppercase}
+.reg span{display:block;color:var(--muted);font-size:.93rem;margin-top:6px;max-width:60ch}
+.live{display:grid;gap:10px;margin-top:16px;border:2px solid var(--fg);border-radius:16px;padding:14px 16px;background:var(--surface)}
+.live .now{display:flex;align-items:center;gap:8px;font:800 .78rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:#d12f2f}
+.live .now i{width:10px;height:10px;border-radius:50%;background:#e53935;box-shadow:0 0 0 0 rgba(229,57,53,.6);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(229,57,53,0)}100%{box-shadow:0 0 0 0 rgba(229,57,53,0)}}
+.live p{margin:0;font-weight:500}
+.live .btn{justify-self:start;padding:12px 18px 10px;font-size:.95rem}
+@media (min-width:880px){.reg{grid-template-columns:1fr auto;padding:22px 26px}}
 .slots{list-style:none;margin:0;padding:0 0 0 22px;position:relative}
 .slots::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(var(--c),color-mix(in srgb,var(--c) 25%,#fff))}
 .slot{position:relative;padding:4px 0 18px 12px}
@@ -332,11 +347,11 @@ footer img{height:30px;width:auto}
   <div class="wrap">
     <a class="logo" href="#inicio"><img src="img/logo-nueva-america.png" alt="Nueva América, Fundación de Educación Superior" width="874" height="150"></a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#vitrina">Stands</a>
       <a href="#agenda">Agenda</a>
+      <a href="#vitrina">Stands</a>
       <a href="#premios">Premios</a>
     </nav>
-    <a class="btn btn-primary cta" href="#vitrina">Ver stands</a>
+    <a class="btn btn-primary cta" id="ctaTop" href="#agenda">Regístrate</a>
   </div>
 </header>
 
@@ -352,6 +367,7 @@ footer img{height:30px;width:auto}
         <div><b>6:00 pm</b><span>feria virtual</span></div>
         <div><b id="statN">0</b><span>stands</span></div>
       </div>
+      <div class="live" id="enVivo" hidden></div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#vitrina">Recorrer la feria <span class="arrow" aria-hidden="true"></span></a>
         <a class="btn btn-ghost" href="#agenda">Agenda 11–13 nov</a>
@@ -365,6 +381,25 @@ footer img{height:30px;width:auto}
 </div>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+<section id="agenda">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Programación virtual · 11 al 13 de noviembre</p>
+      <h2>Agenda de la <em>semana</em></h2>
+      <p>Tres noches, tres áreas a cargo y una sala de Meet por día. En cada actividad hay figuras ocultas para la búsqueda del tesoro: toma captura cuando las veas.</p>
+    </div>
+    <div class="reg" id="registro">
+      <div>
+        <b>Regístrate para participar</b>
+        <span>Inscríbete en las actividades de la semana y concursa por los premios de la búsqueda del tesoro y la trivia.</span>
+      </div>
+      <a class="btn btn-primary" id="regBtn" href="#" target="_blank" rel="noopener">Ir al formulario de registro <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+    <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Días"></div>
+    <div class="days" id="days"></div>
+  </div>
+</section>
 
 <section id="vitrina">
   <div class="wrap">
@@ -399,17 +434,6 @@ footer img{height:30px;width:auto}
   </div>
 </section>
 
-<section id="agenda">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Programación virtual · 11 al 13 de noviembre</p>
-      <h2>Agenda de la <em>semana</em></h2>
-      <p>Tres noches, tres áreas a cargo. En cada actividad hay figuras ocultas para la búsqueda del tesoro: toma captura cuando las veas.</p>
-    </div>
-    <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Días"></div>
-    <div class="days" id="days"></div>
-  </div>
-</section>
 
 <section id="premios">
   <div class="wrap">
@@ -523,7 +547,7 @@ const corto = c => c.corto || c.nombre.split(/\s+/)[0];
 const iniciales = s => String(s||"").split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
 
 /* ---------- Enlaces ---------- */
-const handle = v => String(v||"").trim().replace(/^https?:\/\/[^/]+\//i,"").replace(/^@/,"").replace(/\/.*$/,"");
+const handle = v => String(v||"").trim().replace(/^https?:\/\/[^/]+\//i,"").replace(/^(people|pages)\//i,"").replace(/^@/,"").replace(/[\/?].*$/,"");
 function socialLinks(e){
   const out = [];
   if (e.instagram) out.push({red:"Instagram", txt:"@"+handle(e.instagram), url:/^https?:/i.test(e.instagram)?e.instagram:"https://instagram.com/"+handle(e.instagram)});
@@ -741,28 +765,40 @@ $("#joinCta").innerHTML = CONFIG.enlaceFormulario
   ? `<a class="btn btn-primary" href="${esc(CONFIG.enlaceFormulario)}" target="_blank" rel="noopener">Inscribir mi emprendimiento <span class="arrow" aria-hidden="true"></span></a>`
   : `<a class="btn btn-primary" href="#vitrina">Recorrer los stands <span class="arrow" aria-hidden="true"></span></a>`;
 $("#joinN").textContent = DATA.length;
+if (CONFIG.formularioRegistro){
+  $("#regBtn").href = CONFIG.formularioRegistro;
+  const t = $("#ctaTop"); t.href = CONFIG.formularioRegistro; t.target = "_blank"; t.rel = "noopener";
+} else { $("#registro").hidden = true; $("#ctaTop").textContent = "Ver stands"; $("#ctaTop").href = "#vitrina"; }
 
 /* ---------- Agenda ---------- */
 const AGENDA = [
-  { d:"11", dia:"Miércoles", corto:"Mié", area:"Coordinación de Investigación · Bienestar", tab:"Bienestar", c:"var(--purple)",
+  { d:"11", dia:"Miércoles", corto:"Mié", area:"Coordinación de Bienestar", tab:"Bienestar", c:"var(--purple)", meet:"https://meet.google.com/zzv-qwzk-ecq", inicio:"6:00 pm",
     intro:"Relajación, reflexión y bienestar en el contexto de la virtualidad, el auge de las redes sociales y las tensiones sobre la productividad laboral.", slots:[
-    ["5:00 – 6:00 pm","Apertura de la Semana Institucional","Video virtual de presencialidad, hoja de actividades y presentación de la búsqueda del tesoro"],
+    ["6:00 pm","Apertura de la Semana Institucional","Reflexión a cargo de Laura Mora, hoja de actividades y estructura de premiación"],
     ["6:15 – 7:15 pm","Leer el mundo en la era postdigital: alfabetizaciones en las narrativas de los datos y los algoritmos","Ana María Buitrago · Licenciada en Lingüística y Literatura, magíster en Informática Educativa y en Humanidades Digitales, doctoranda en Comunicación (UNLP, Argentina)"],
     ["7:30 – 8:30 pm","Taller de yoga y mindfulness «Caminos al alma»","Tatiana Fierro · Psicóloga transpersonal de la Pontificia Universidad Javeriana, con experiencia en turismo y educación terapéutica"],
     ["8:45 – 9:45 pm","No es falta de tiempo, es falta de energía: logística del bienestar personal","Claudia Goyeneche · Profesional en Salud Ocupacional, especialista en Gestión del Desarrollo Humano y Bienestar Social, magíster en Gestión Social Empresarial"]]},
-  { d:"12", dia:"Jueves", corto:"Jue", area:"Coordinación de Investigación", tab:"Investigación", c:"var(--neon-ink)",
+  { d:"12", dia:"Jueves", corto:"Jue", area:"Coordinación de Investigación", tab:"Investigación", c:"var(--neon-ink)", meet:"https://meet.google.com/rny-ttod-jqz", inicio:"5:00 pm",
     intro:"El estudio del mercado laboral y cómo la academia nos muestra la realidad del sector productivo.", slots:[
     ["5:00 – 6:00 pm","Ponencia del Semillero de Brecha Laboral",""],
-    ["6:15 – 7:15 pm","Webinar: Felicidad en el trabajo","Pablo Andrés Erazo Muñoz · Investigador y PhD (UNAL)"],
+    ["6:15 – 7:15 pm","Webinar: De sufrir a ser feliz en el trabajo","Pablo Andrés Erazo Muñoz · Investigador y PhD (UNAL)"],
     ["7:30 – 8:30 pm","Think Like an Engineer: pensar, investigar y transformar","Andrea Tijaro"],
-    ["8:45 – 9:45 pm","Mercado internacional: las tecnologías 4.0 en la logística portuaria y aduanera","Ponencia de José David Giraldo"]]},
-  { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", tab:"Sector Externo", c:"var(--orange-ink)",
+    ["8:45 – 9:45 pm","Mercado internacional: las tecnologías 4.0 en la logística portuaria","Ponencia de José David Giraldo"]]},
+  { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", tab:"Sector Externo", c:"var(--orange-ink)", meet:"https://meet.google.com/cze-swae-uhh", inicio:"6:00 pm",
     intro:"Lanzamiento de la red de networking, la Feria Empresarial Virtual, la premiación y el cierre.", slots:[
-    ["6:00 – 7:00 pm","Bienvenida a la Feria Empresarial Virtual","Apertura a cargo de Mónica González",true],
-    ["7:15 – 8:15 pm","Kahoot de emprendimientos y podio de ganadores","Trivia sobre los stands de la feria"],
-    ["8:30 – 9:30 pm","Búsqueda del tesoro: premiación y cierre","Podio de oro, plata y bronce"]]}
+    ["6:00 – 7:00 pm","Bienvenida a la Feria Empresarial Virtual","Apertura y exploración por Mónica González · Reflexiones sobre «Emprender sin fronteras: del mundo digital a un negocio real»",true],
+    ["7:15 – 8:15 pm","Trivia de emprendimientos y podio de ganadores","Kahoot sobre los stands de la feria"],
+    ["8:30 – 9:30 pm","Premiación de la búsqueda del tesoro y cierre","Podio de oro, plata y bronce"]]}
 ];
-const hoy = new Date(), hoyN = (hoy.getFullYear()===2026 && hoy.getMonth()===10) ? String(hoy.getDate()) : "";
+let hoyISO = ""; try { hoyISO = new Intl.DateTimeFormat("en-CA",{timeZone:"America/Bogota"}).format(new Date()); } catch(_){}
+const hoyN = hoyISO.startsWith("2026-11-") ? String(+hoyISO.slice(8,10)) : "";
+const MEET_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10l6-4v12l-6-4"/></svg>';
+const meetHTML = day => day.meet ? `<div class="meet"><a class="btn" href="${esc(day.meet)}" target="_blank" rel="noopener">${MEET_ICON} Entrar a la sesión del ${day.dia.toLowerCase()}</a><code>${esc(day.meet.replace("https://",""))}</code></div>` : "";
+const hoyDia = AGENDA.find(a => a.d===hoyN);
+if (hoyDia){
+  const el = $("#enVivo"); el.hidden = false; el.style.setProperty("--c", hoyDia.c);
+  el.innerHTML = `<span class="now"><i></i>Hoy · ${hoyDia.dia} ${hoyDia.d} de noviembre</span><p>La jornada empieza a las ${hoyDia.inicio}. ${esc(hoyDia.area)}.</p><a class="btn btn-primary" href="${esc(hoyDia.meet)}" target="_blank" rel="noopener">Entrar a Meet</a>`;
+}
 let diaOn = AGENDA.some(a=>a.d===hoyN) ? hoyN : "11";
 function renderAgenda(){
   $("#dayTabs").innerHTML = AGENDA.map(a => `<button type="button" role="tab" data-d="${a.d}" aria-selected="${a.d===diaOn}">${a.corto} ${a.d}<small>${a.tab}</small></button>`).join("");
@@ -770,6 +806,7 @@ function renderAgenda(){
     <article class="day${day.d===diaOn?" on":""}" style="--c:${day.c}">
       <div class="day-head"><span class="d">${day.d}</span><div><b>${day.dia}</b><small>${day.area}</small></div></div>
       ${day.intro?`<p class="day-intro">${esc(day.intro)}</p>`:""}
+      ${meetHTML(day)}
       <ol class="slots">${day.slots.map(([t,ti,sub,feria]) => ti
         ? `<li class="slot${feria?" feria":""}"><time>${t}</time><p>${esc(ti)}${feria?'<span class="tag" style="display:inline-block;margin-top:0">Feria</span>':""}${sub?`<span>${esc(sub)}</span>`:""}</p></li>`
         : `<li class="slot tbd"><time>${t}</time><p>${esc(sub)}</p></li>`).join("")}</ol>
