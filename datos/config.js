@@ -1,32 +1,29 @@
 /* =========================================================
    CONFIGURACIÓN GENERAL DE LA VITRINA
-   Edita este archivo para cambiar textos y categorías.
    ========================================================= */
 window.CONFIG = {
   // true = muestra el aviso de "maqueta con datos de ejemplo".
-  // Cámbialo a false cuando cargues los emprendimientos reales.
-  modoMaqueta: true,
+  modoMaqueta: false,
 
-  // Enlace al formulario (Google Forms, Microsoft Forms…) donde los
-  // estudiantes inscriben su emprendimiento. Déjalo vacío si aún no existe.
+  // Enlace al formulario de inscripción. Vacío = inscripciones cerradas.
   enlaceFormulario: "",
 
   // Mensaje que se precarga al abrir WhatsApp desde la vitrina.
   mensajeWhatsApp:
-    "¡Hola! Vi tu emprendimiento en la Feria Empresarial de la 21ª Semana Neoamericana y quiero más información.",
+    "¡Hola! Vi tu emprendimiento en la Feria Empresarial Virtual de la 21ª Semana Neoamericana y quiero más información.",
 
-  // Categorías. "nombre" debe coincidir con lo que escriben los estudiantes
-  // (no importan tildes ni mayúsculas). Íconos disponibles:
-  // gastronomia, moda, belleza, tecnologia, artesanias, servicios,
-  // mascotas, bienestar, idea
+  // Categorías. "nombre" debe coincidir con la categoría de cada emprendimiento
+  // (no importan tildes ni mayúsculas). "corto" es la etiqueta de la red del inicio.
+  // Íconos: gastronomia, moda, belleza, tecnologia, artesanias, hogar,
+  // servicios, industria, mascotas, bienestar, idea
   categorias: [
-    { nombre: "Gastronomía",              color: "#FD531E", icono: "gastronomia" },
-    { nombre: "Moda y accesorios",        color: "#6D28D9", icono: "moda" },
-    { nombre: "Belleza y cuidado personal", color: "#E5488F", icono: "belleza" },
-    { nombre: "Tecnología",               color: "#00B7FF", icono: "tecnologia" },
-    { nombre: "Artesanías y decoración",  color: "#E8890C", icono: "artesanias" },
-    { nombre: "Servicios profesionales",  color: "#0FA88E", icono: "servicios" },
-    { nombre: "Mascotas",                 color: "#C99A00", icono: "mascotas" },
-    { nombre: "Salud y bienestar",        color: "#2FA65A", icono: "bienestar" }
+    { nombre: "Gastronomía y alimentos",          corto: "Gastronomía", color: "#FD531E", icono: "gastronomia" },
+    { nombre: "Tecnología y productos digitales", corto: "Tecnología",  color: "#00A3E6", icono: "tecnologia" },
+    { nombre: "Artesanías",                       corto: "Artesanías",  color: "#E8890C", icono: "artesanias" },
+    { nombre: "Moda y accesorios",                corto: "Moda",        color: "#6D28D9", icono: "moda" },
+    { nombre: "Servicios",                        corto: "Servicios",   color: "#0FA88E", icono: "servicios" },
+    { nombre: "Belleza y cuidado personal",       corto: "Belleza",     color: "#E5488F", icono: "belleza" },
+    { nombre: "Hogar y decoración",               corto: "Hogar",       color: "#C99A00", icono: "hogar" },
+    { nombre: "Comercio e industria",             corto: "Comercio",    color: "#3E5C99", icono: "industria" }
   ]
 };

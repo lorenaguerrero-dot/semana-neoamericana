@@ -6,7 +6,7 @@
 <!--ART-START-->
 <title>21ª Semana Neoamericana</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="La red de emprendedores neoamericanos · Feria Empresarial Virtual de la XXI Semana Neoamericana & VI Internacional, 9 al 13 de noviembre de 2026.">
+<meta name="description" content="La red de emprendedores neoamericanos · Feria Empresarial Virtual de la XXI Semana Neoamericana & VI Internacional, 11 al 13 de noviembre de 2026.">
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +163,17 @@ section{padding-block:52px}
 .stand .num i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px rgba(255,255,255,.18)}
 .stand .catn{font:600 .7rem var(--display);letter-spacing:.1em;color:#b8c6e6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .media{position:relative;aspect-ratio:16/10;max-width:100%;border:0;border-bottom:2px solid var(--fg);padding:0;cursor:pointer;background:var(--tint);display:block;width:100%}
-.media img{width:100%;height:100%;object-fit:cover}
+.media img,.gal .frame img{width:100%;height:100%;object-fit:cover}
+.pic{position:relative;width:100%;height:100%;overflow:hidden;background:#fff}
+.pic .blur{position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(18px) saturate(1.2);opacity:.55;transform:scale(1.05)}
+.pic .main{position:relative;width:100%;height:100%;object-fit:cover}
+.pic.fit .main{object-fit:contain}
+.pic:not(.fit) .blur{display:none}
+.namerow{display:flex;align-items:center;gap:10px;min-width:0}
+.namerow h3{min-width:0}
+.logo-b{flex:none;width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--fg);background:#fff}
+.loc{display:inline-flex;align-items:center;gap:5px;font:600 .74rem var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.loc svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
 .media .badge{position:absolute;right:10px;bottom:10px;font:700 .72rem var(--display);background:var(--surface);color:var(--fg);padding:5px 10px 4px;border-radius:999px;border:2px solid var(--fg)}
 .ph{width:100%;height:100%;position:relative;overflow:hidden;background:color-mix(in srgb,var(--c) 10%,#fff)}
 .ph svg.bg{position:absolute;inset:0;width:100%;height:100%}
@@ -198,7 +208,7 @@ dialog[open]{animation:up .28s ease-out}
 .ficha{display:grid}
 .gal{position:relative;background:var(--tint);min-width:0}
 .gal .frame{aspect-ratio:4/3;max-width:100%}
-.gal .frame img,.gal .frame .ph{width:100%;height:100%;object-fit:cover}
+.gal .frame .pic,.gal .frame .ph{width:100%;height:100%}
 .gal-nav{position:absolute;inset:auto 0 12px;display:flex;justify-content:center;gap:8px}
 .gal-nav button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(1,25,70,.25);cursor:pointer;padding:0}
 .gal-nav button[aria-current="true"]{background:var(--navy);width:24px;border-radius:5px}
@@ -241,6 +251,9 @@ dialog[open]{animation:up .28s ease-out}
 .prize{border:2px solid var(--fg);border-radius:var(--r);padding:20px;background:var(--surface);display:flex;flex-direction:column;gap:10px}
 .prize h3{font-size:1.7rem;font-weight:900;text-transform:uppercase}
 .prize p{margin:0;color:var(--muted);font-size:.95rem}
+.prize p b{color:var(--fg)}
+.prize-list{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.92rem;color:var(--muted)}
+.prize-list b{display:inline-block;min-width:30px;font-family:var(--display);color:var(--orange-ink)}
 .prize .when{font:800 .8rem var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--orange-ink)}
 .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end;margin-top:6px;max-width:320px}
 .podium div{text-align:center;border-radius:10px 10px 4px 4px;padding:8px 6px;font:800 .76rem var(--display);color:var(--navy);border:2px solid var(--fg)}
@@ -322,7 +335,7 @@ footer img{height:30px;width:auto}
       <a href="#agenda">Agenda</a>
       <a href="#premios">Premios</a>
     </nav>
-    <a class="btn btn-primary cta" href="#inscribe">Inscríbete</a>
+    <a class="btn btn-primary cta" href="#vitrina">Ver stands</a>
   </div>
 </header>
 
@@ -340,7 +353,7 @@ footer img{height:30px;width:auto}
       </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#vitrina">Recorrer la feria <span class="arrow" aria-hidden="true"></span></a>
-        <a class="btn btn-ghost" href="#agenda">Agenda 9–13 nov</a>
+        <a class="btn btn-ghost" href="#agenda">Agenda 11–13 nov</a>
       </div>
     </div>
     <div>
@@ -407,13 +420,19 @@ footer img{height:30px;width:auto}
       <article class="prize">
         <p class="when">Toda la semana · Premiación vie 8:45 pm</p>
         <h3>Búsqueda del tesoro</h3>
-        <p>En cada actividad hay figuras u objetos ocultos. Toma captura de pantalla de cada uno y envíalas. Quienes encuentren más suben al podio.</p>
+        <p>En cada actividad hay figuras u objetos ocultos. Toma captura de pantalla de cada uno y envíalas. Quienes encuentren más suben al podio de oro, plata y bronce.</p>
+        <p><b>Premio:</b> tarjeta de servicio de streaming + bono D1 de $100.000.</p>
         <div class="podium" aria-label="Podio: oro, plata y bronce"><div class="s"><span>2</span>Plata</div><div class="g"><span>1</span>Oro</div><div class="b"><span>3</span>Bronce</div></div>
       </article>
       <article class="prize">
         <p class="when">Viernes 13 · 7:30 pm</p>
         <h3>Trivia de emprendimientos</h3>
-        <p>Un Kahoot sobre los stands de esta feria. Recórrelos antes de jugar. Los tres primeros puestos ganan productos de su emprendimiento favorito con envío incluido y bonos.</p>
+        <p>Un Kahoot sobre los stands de esta feria: recórrelos antes de jugar.</p>
+        <ul class="prize-list">
+          <li><b>1.º</b> Dos productos de tu emprendimiento favorito con envío incluido + bono de streaming.</li>
+          <li><b>2.º</b> Un producto de tu emprendimiento favorito con envío incluido + bono D1.</li>
+          <li><b>3.º</b> Tarjeta de servicio de streaming (Spotify, Disney, Netflix o Fortnite).</li>
+        </ul>
         <div class="podium" aria-label="Podio de la trivia"><div class="s"><span>2</span>Plata</div><div class="g"><span>1</span>Oro</div><div class="b"><span>3</span>Bronce</div></div>
       </article>
     </div>
@@ -427,10 +446,10 @@ footer img{height:30px;width:auto}
       <div>
         <p class="eyebrow">Estudiantes emprendedores</p>
         <h2>Conecta tu <em>emprendimiento</em> a la red</h2>
-        <p>Comparte tu información y tendrás un stand en la Feria Empresarial Virtual, frente a estudiantes, docentes, egresados y sector productivo.</p>
+        <p>Este año <b id="joinN" style="color:#fff">21</b> emprendimientos de estudiantes de los cuatro programas tienen su stand en la Feria Empresarial Virtual. Las inscripciones de esta edición ya cerraron: prepara el tuyo para la próxima.</p>
         <div class="hero-actions" id="joinCta"></div>
       </div>
-      <ul class="req">
+      <ul class="req" aria-label="Lo que pedimos a cada emprendimiento">
         <li><span class="k">1</span><div><b>Nombre y categoría</b><span>Cómo se llama y en qué categoría encaja.</span></div></li>
         <li><span class="k">2</span><div><b>Hasta 3 fotografías</b><span>Horizontales o cuadradas, buena luz, sin texto encima.</span></div></li>
         <li><span class="k">3</span><div><b>Redes sociales</b><span>Instagram, Facebook, TikTok o página web.</span></div></li>
@@ -482,6 +501,8 @@ const ICONS = {
   artesanias:'<path d="M9 3h6M10 3v3c-3 1-5 4-5 8a7 7 0 0 0 14 0c0-4-2-7-5-8V3"/><path d="M6 13h12"/>',
   servicios:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 12h18M11 12v2h2v-2"/>',
   mascotas:'<circle cx="6" cy="10" r="2"/><circle cx="18" cy="10" r="2"/><circle cx="9.5" cy="5.5" r="2"/><circle cx="14.5" cy="5.5" r="2"/><path d="M7.5 17.5c0-3 2-5.5 4.5-5.5s4.5 2.5 4.5 5.5c0 2-1.7 2.5-4.5 2.5s-4.5-.5-4.5-2.5z"/>',
+  hogar:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>',
+  industria:'<path d="M3 21V10l6 4V10l6 4V6h6v15z"/><path d="M7 17h2M12 17h2M17 17h2"/>',
   bienestar:'<path d="M5 20c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M5 20l9-9"/>',
   idea:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>'
 };
@@ -494,7 +515,7 @@ DATA.forEach(e => {
   const k = norm(e.categoria) || "otros";
   if (!cats.has(k)) cats.set(k, {nombre: e.categoria || "Otros", color:"#00B7FF", icono:"idea", key:k});
   e._cat = cats.get(k);
-  e._search = norm([e.nombre, e.descripcion, e.estudiante, e.programa, e.categoria].join(" "));
+  e._search = norm([e.nombre, e.descripcion, e.estudiante, e.programa, e.categoria, e.ubicacion].join(" "));
 });
 DATA.slice().sort((a,b)=>a.nombre.localeCompare(b.nombre,"es")).forEach((e,i)=> e._stand = String(i+1).padStart(2,"0"));
 const corto = c => c.corto || c.nombre.split(/\s+/)[0];
@@ -534,10 +555,20 @@ function phNet(seed){
 }
 function photoHTML(e, i){
   const f = (e.fotos||[])[i];
-  if (f) return `<img src="${esc(f)}" alt="${esc(e.nombre)} – foto ${i+1}" loading="lazy">`;
-  return `<div class="ph">${phNet(+e._stand*7+i*13)}<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[e._cat.icono]||ICONS.idea}</svg></span><span class="ph-label">Foto ${i+1} · pendiente</span></div>`;
+  if (f) return `<div class="pic"><img class="blur" src="${esc(f)}" alt="" aria-hidden="true" loading="lazy"><img class="main" src="${esc(f)}" alt="${esc(e.nombre)} – foto ${i+1}" loading="lazy" onload="window.__fit&&window.__fit(this)"></div>`;
+  return `<div class="ph">${phNet(+e._stand*7+i*13)}<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[e._cat.icono]||ICONS.idea}</svg></span>${e.ejemplo?`<span class="ph-label">Foto ${i+1} · pendiente</span>`:""}</div>`;
 }
 const nFotos = e => Math.max((e.fotos||[]).length, 1);
+/* Fotos muy verticales u horizontales se muestran completas sobre un fondo difuminado */
+window.__fit = img => {
+  const box = img.parentElement, bw = box.clientWidth, bh = box.clientHeight;
+  if (!bw || !bh || !img.naturalWidth) return;
+  const r = (img.naturalWidth/img.naturalHeight) / (bw/bh);
+  box.classList.toggle("fit", r < 0.8 || r > 1.3);
+};
+const PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+const locHTML = e => e.ubicacion ? `<span class="loc">${PIN}${esc(e.ubicacion)}</span>` : "";
+const logoHTML = e => e.logo ? `<img class="logo-b" src="${esc(e.logo)}" alt="Logo de ${esc(e.nombre)}" loading="lazy">` : "";
 
 /* ---------- Estado ---------- */
 let state = { cat:"todas", q:"", orden:"azar" };
@@ -567,12 +598,13 @@ function renderGrid(){
   }
   $("#grid").innerHTML = items.map(e => `
     <article class="card" style="--c:${esc(e._cat.color)}">
-      <div class="stand"><span class="num"><i></i>Stand ${e._stand}</span><span class="catn">${esc(e._cat.nombre)}</span></div>
+      <div class="stand"><span class="num"><i></i>Stand ${e._stand}</span><span class="catn">${esc(corto(e._cat))}</span></div>
       <button class="media" type="button" data-open="${esc(e.id)}" aria-label="Ver fotos de ${esc(e.nombre)}">
         ${photoHTML(e,0)}${nFotos(e)>1?`<span class="badge">${nFotos(e)} fotos</span>`:""}
       </button>
       <div class="body">
-        <h3><button type="button" data-open="${esc(e.id)}">${esc(e.nombre)}</button></h3>
+        <div class="namerow">${logoHTML(e)}<h3><button type="button" data-open="${esc(e.id)}">${esc(e.nombre)}</button></h3></div>
+        ${locHTML(e)}
         <p class="desc">${esc(e.descripcion)}</p>
         <div class="socials">${socialsHTML(e)}</div>
         <div class="who"><span class="av" aria-hidden="true">${esc(iniciales(e.estudiante))}</span><span><b>${esc(e.estudiante)}</b>${esc(e.programa||"")}</span></div>
@@ -659,8 +691,9 @@ function openFicha(id){
         <div class="gal-nav">${Array.from({length:n},(_,k)=>`<button type="button" data-k="${k}" aria-label="Foto ${k+1}" aria-current="${k===0}"></button>`).join("")}</div>`:""}
       </div>
       <div class="ficha-info">
-        <div class="stand"><span class="num"><i></i>Stand ${e._stand}</span><span class="catn">${esc(e._cat.nombre)}</span></div>
-        <h3 id="fichaTitulo">${esc(e.nombre)}</h3>
+        <div class="stand"><span class="num"><i></i>Stand ${e._stand}</span><span class="catn">${esc(corto(e._cat))}</span></div>
+        <div class="namerow">${logoHTML(e)}<h3 id="fichaTitulo">${esc(e.nombre)}</h3></div>
+        ${locHTML(e)}
         <p class="desc">${esc(e.descripcion)}</p>
         <div class="who"><span class="av" aria-hidden="true">${esc(iniciales(e.estudiante))}</span><span><b>${esc(e.estudiante)}</b>${esc(e.programa||"")}</span></div>
         <div class="socials">${socialsHTML(e)}</div>
@@ -705,25 +738,26 @@ $("#grid").addEventListener("click", ev => {
 if (CONFIG.modoMaqueta) $("#avisoMaqueta").hidden = false;
 $("#joinCta").innerHTML = CONFIG.enlaceFormulario
   ? `<a class="btn btn-primary" href="${esc(CONFIG.enlaceFormulario)}" target="_blank" rel="noopener">Inscribir mi emprendimiento <span class="arrow" aria-hidden="true"></span></a>`
-  : `<span class="btn btn-off" aria-disabled="true">Formulario: disponible pronto</span>`;
+  : `<a class="btn btn-primary" href="#vitrina">Recorrer los stands <span class="arrow" aria-hidden="true"></span></a>`;
+$("#joinN").textContent = DATA.length;
 
 /* ---------- Agenda ---------- */
 const AGENDA = [
   { d:"11", dia:"Miércoles", corto:"Mié", area:"Coordinación de Bienestar", c:"var(--purple)", slots:[
-    ["5:00 pm","Apertura de la Semana Institucional","Video de presencialidad, hoja de actividades y lanzamiento de la búsqueda del tesoro"],
-    ["6:15 pm","Procrastinación y sobreestimulación","Reflexión sobre el impacto de las redes sociales en la atención, el descanso y el bienestar emocional"],
-    ["7:30 pm","Conectar y fluir","Taller de mindfulness y yoga"],
-    ["8:45 pm","Alerta en casa o Musicoterapia","Taller de manejo de emergencias domésticas o taller de musicoterapia"]]},
+    ["5:00 – 6:00 pm","Apertura de la Semana Institucional","Video de presencialidad, hoja de actividades y presentación de la búsqueda del tesoro"],
+    ["6:15 – 7:15 pm","Leer el mundo en la era postdigital","Ana María Buitrago · Alfabetizaciones en las narrativas de los datos y los algoritmos"],
+    ["7:30 – 8:30 pm","Tatiana Fierro","Tema por confirmar"],
+    ["8:45 – 9:45 pm","Logística del bienestar personal","Claudia Goyeneche · Cómo administrar tu energía sin llegar al burnout"]]},
   { d:"12", dia:"Jueves", corto:"Jue", area:"Coordinación de Investigación", c:"var(--neon-ink)", slots:[
-    ["5:00 pm","Ponencia del Semillero de Brecha Laboral",""],
-    ["6:15 pm","Felicidad en el trabajo","Webinar con Pablo Andrés Erazo Muñoz, investigador y PhD (UNAL)"],
-    ["7:30 pm",null,"Actividad por confirmar"],
-    ["8:45 pm","Mercado internacional: logística portuaria y aduanera","Ponencia de José David Giraldo"]]},
+    ["5:00 – 6:00 pm","Ponencia del Semillero de Brecha Laboral",""],
+    ["6:15 – 7:15 pm","Webinar: Felicidad en el trabajo","Pablo Andrés Erazo Muñoz, investigador y PhD (UNAL)"],
+    ["7:30 – 8:30 pm","Think Like an Engineer: pensar, investigar y transformar","Andrea"],
+    ["8:45 – 9:45 pm","Mercado internacional: logística portuaria y aduanera","Ponencia de José David Giraldo"]]},
   { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", c:"var(--orange-ink)", slots:[
-    ["5:00 pm","Bienvenida a la Feria Empresarial Virtual","",true],
-    ["6:15 pm","Feria Empresarial Virtual","Recorre los stands y conecta con los emprendedores",true],
-    ["7:30 pm","Kahoot de emprendimientos y podio","",false],
-    ["8:45 pm","Pistas del tesoro y premiación","Podio de la búsqueda del tesoro y dos ganadores extra"]]}
+    ["5:00 – 6:00 pm","Bienvenida a la Feria Empresarial Virtual","",true],
+    ["6:15 – 7:15 pm","Feria Empresarial Virtual","Recorre los stands y conecta con los emprendedores",true],
+    ["7:30 – 8:30 pm","Kahoot de emprendimientos y podio de ganadores",""],
+    ["8:45 – 9:45 pm","Pistas del tesoro y premiación","Podio de la búsqueda del tesoro y dos ganadores extra"]]}
 ];
 const hoy = new Date(), hoyN = (hoy.getFullYear()===2026 && hoy.getMonth()===10) ? String(hoy.getDate()) : "";
 let diaOn = AGENDA.some(a=>a.d===hoyN) ? hoyN : "11";

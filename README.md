@@ -147,3 +147,17 @@ de su categoría.
 - **Mensaje de WhatsApp precargado:** `mensajeWhatsApp` en `datos/config.js`.
 - **Orden de la vitrina:** por defecto aleatorio en cada visita, para que todos
   los emprendimientos tengan la misma visibilidad. El visitante puede cambiar a orden por número de stand.
+
+---
+
+## 6. Cómo se cargaron los emprendimientos reales (noviembre 2026)
+
+- Los datos salen de la hoja **Respuestas | Feria de Emprendimiento Semana Neoamericana 2026**.
+  Se publican: nombre, categoría, descripción resumida, estudiante, programa,
+  departamento, redes y WhatsApp. **No** se publican correos ni el segundo teléfono.
+- Las fotos se tomaron de la carpeta de Drive de cada emprendimiento (columna *Carpetas*),
+  se redujeron a máximo 1200 px en JPG y se guardaron en `fotos/<id>/1.jpg, 2.jpg, 3.jpg`.
+  Si hay logo, va en `fotos/<id>/logo.jpg` y se muestra junto al nombre.
+- Para agregar o cambiar fotos de un emprendimiento: sube los JPG a su carpeta en `fotos/`
+  y escribe las rutas en el campo `fotos` de `datos/emprendimientos.js`.
+- Las fotos muy verticales u horizontales se muestran completas sobre un fondo difuminado.
