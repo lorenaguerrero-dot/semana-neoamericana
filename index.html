@@ -235,6 +235,7 @@ dialog[open]{animation:up .28s ease-out}
 .day-head .d{font:900 3.4rem/.8 var(--display);color:var(--c);font-variant-numeric:tabular-nums;padding-top:6px}
 .day-head b{display:block;font:800 1.15rem/1.1 var(--display);text-transform:uppercase}
 .day-head small{display:block;font-size:.8rem;color:var(--muted)}
+.day-intro{margin:0;font-size:.9rem;color:var(--muted);max-width:52ch}
 .slots{list-style:none;margin:0;padding:0 0 0 22px;position:relative}
 .slots::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(var(--c),color-mix(in srgb,var(--c) 25%,#fff))}
 .slot{position:relative;padding:4px 0 18px 12px}
@@ -348,7 +349,7 @@ footer img{height:30px;width:auto}
       <p class="lead">Cada punto es un emprendimiento de nuestros estudiantes. <b>Conectando ideas, innovación y emprendimiento</b> en la Feria Empresarial Virtual.</p>
       <div class="feria-strip">
         <div><b>Vie 13</b><span>noviembre</span></div>
-        <div><b>5:00 pm</b><span>feria virtual</span></div>
+        <div><b>6:00 pm</b><span>feria virtual</span></div>
         <div><b id="statN">0</b><span>stands</span></div>
       </div>
       <div class="hero-actions">
@@ -401,7 +402,7 @@ footer img{height:30px;width:auto}
 <section id="agenda">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Programación virtual · 5:00 a 9:45 pm</p>
+      <p class="eyebrow">Programación virtual · 11 al 13 de noviembre</p>
       <h2>Agenda de la <em>semana</em></h2>
       <p>Tres noches, tres áreas a cargo. En cada actividad hay figuras ocultas para la búsqueda del tesoro: toma captura cuando las veas.</p>
     </div>
@@ -418,14 +419,14 @@ footer img{height:30px;width:auto}
     </div>
     <div class="prizes">
       <article class="prize">
-        <p class="when">Toda la semana · Premiación vie 8:45 pm</p>
+        <p class="when">Toda la semana · Premiación vie 8:30 pm</p>
         <h3>Búsqueda del tesoro</h3>
         <p>En cada actividad hay figuras u objetos ocultos. Toma captura de pantalla de cada uno y envíalas. Quienes encuentren más suben al podio de oro, plata y bronce.</p>
         <p><b>Premio:</b> tarjeta de servicio de streaming + bono D1 de $100.000.</p>
         <div class="podium" aria-label="Podio: oro, plata y bronce"><div class="s"><span>2</span>Plata</div><div class="g"><span>1</span>Oro</div><div class="b"><span>3</span>Bronce</div></div>
       </article>
       <article class="prize">
-        <p class="when">Viernes 13 · 7:30 pm</p>
+        <p class="when">Viernes 13 · 7:15 pm</p>
         <h3>Trivia de emprendimientos</h3>
         <p>Un Kahoot sobre los stands de esta feria: recórrelos antes de jugar.</p>
         <ul class="prize-list">
@@ -743,29 +744,32 @@ $("#joinN").textContent = DATA.length;
 
 /* ---------- Agenda ---------- */
 const AGENDA = [
-  { d:"11", dia:"Miércoles", corto:"Mié", area:"Coordinación de Bienestar", c:"var(--purple)", slots:[
-    ["5:00 – 6:00 pm","Apertura de la Semana Institucional","Video de presencialidad, hoja de actividades y presentación de la búsqueda del tesoro"],
-    ["6:15 – 7:15 pm","Leer el mundo en la era postdigital","Ana María Buitrago · Alfabetizaciones en las narrativas de los datos y los algoritmos"],
-    ["7:30 – 8:30 pm","Tatiana Fierro","Tema por confirmar"],
-    ["8:45 – 9:45 pm","Logística del bienestar personal","Claudia Goyeneche · Cómo administrar tu energía sin llegar al burnout"]]},
-  { d:"12", dia:"Jueves", corto:"Jue", area:"Coordinación de Investigación", c:"var(--neon-ink)", slots:[
+  { d:"11", dia:"Miércoles", corto:"Mié", area:"Coordinación de Investigación · Bienestar", tab:"Bienestar", c:"var(--purple)",
+    intro:"Relajación, reflexión y bienestar en el contexto de la virtualidad, el auge de las redes sociales y las tensiones sobre la productividad laboral.", slots:[
+    ["5:00 – 6:00 pm","Apertura de la Semana Institucional","Video virtual de presencialidad, hoja de actividades y presentación de la búsqueda del tesoro"],
+    ["6:15 – 7:15 pm","Leer el mundo en la era postdigital: alfabetizaciones en las narrativas de los datos y los algoritmos","Ana María Buitrago · Licenciada en Lingüística y Literatura, magíster en Informática Educativa y en Humanidades Digitales, doctoranda en Comunicación (UNLP, Argentina)"],
+    ["7:30 – 8:30 pm","Taller de yoga y mindfulness «Caminos al alma»","Tatiana Fierro · Psicóloga transpersonal de la Pontificia Universidad Javeriana, con experiencia en turismo y educación terapéutica"],
+    ["8:45 – 9:45 pm","No es falta de tiempo, es falta de energía: logística del bienestar personal","Claudia Goyeneche · Profesional en Salud Ocupacional, especialista en Gestión del Desarrollo Humano y Bienestar Social, magíster en Gestión Social Empresarial"]]},
+  { d:"12", dia:"Jueves", corto:"Jue", area:"Coordinación de Investigación", tab:"Investigación", c:"var(--neon-ink)",
+    intro:"El estudio del mercado laboral y cómo la academia nos muestra la realidad del sector productivo.", slots:[
     ["5:00 – 6:00 pm","Ponencia del Semillero de Brecha Laboral",""],
-    ["6:15 – 7:15 pm","Webinar: Felicidad en el trabajo","Pablo Andrés Erazo Muñoz, investigador y PhD (UNAL)"],
-    ["7:30 – 8:30 pm","Think Like an Engineer: pensar, investigar y transformar","Andrea"],
-    ["8:45 – 9:45 pm","Mercado internacional: logística portuaria y aduanera","Ponencia de José David Giraldo"]]},
-  { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", c:"var(--orange-ink)", slots:[
-    ["5:00 – 6:00 pm","Bienvenida a la Feria Empresarial Virtual","",true],
-    ["6:15 – 7:15 pm","Feria Empresarial Virtual","Recorre los stands y conecta con los emprendedores",true],
-    ["7:30 – 8:30 pm","Kahoot de emprendimientos y podio de ganadores",""],
-    ["8:45 – 9:45 pm","Pistas del tesoro y premiación","Podio de la búsqueda del tesoro y dos ganadores extra"]]}
+    ["6:15 – 7:15 pm","Webinar: Felicidad en el trabajo","Pablo Andrés Erazo Muñoz · Investigador y PhD (UNAL)"],
+    ["7:30 – 8:30 pm","Think Like an Engineer: pensar, investigar y transformar","Andrea Tijaro"],
+    ["8:45 – 9:45 pm","Mercado internacional: las tecnologías 4.0 en la logística portuaria y aduanera","Ponencia de José David Giraldo"]]},
+  { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", tab:"Sector Externo", c:"var(--orange-ink)",
+    intro:"Lanzamiento de la red de networking, la Feria Empresarial Virtual, la premiación y el cierre.", slots:[
+    ["6:00 – 7:00 pm","Bienvenida a la Feria Empresarial Virtual","Apertura a cargo de Mónica González",true],
+    ["7:15 – 8:15 pm","Kahoot de emprendimientos y podio de ganadores","Trivia sobre los stands de la feria"],
+    ["8:30 – 9:30 pm","Búsqueda del tesoro: premiación y cierre","Podio de oro, plata y bronce"]]}
 ];
 const hoy = new Date(), hoyN = (hoy.getFullYear()===2026 && hoy.getMonth()===10) ? String(hoy.getDate()) : "";
 let diaOn = AGENDA.some(a=>a.d===hoyN) ? hoyN : "11";
 function renderAgenda(){
-  $("#dayTabs").innerHTML = AGENDA.map(a => `<button type="button" role="tab" data-d="${a.d}" aria-selected="${a.d===diaOn}">${a.corto} ${a.d}<small>${a.area.replace("Coordinación de ","")}</small></button>`).join("");
+  $("#dayTabs").innerHTML = AGENDA.map(a => `<button type="button" role="tab" data-d="${a.d}" aria-selected="${a.d===diaOn}">${a.corto} ${a.d}<small>${a.tab}</small></button>`).join("");
   $("#days").innerHTML = AGENDA.map(day => `
     <article class="day${day.d===diaOn?" on":""}" style="--c:${day.c}">
       <div class="day-head"><span class="d">${day.d}</span><div><b>${day.dia}</b><small>${day.area}</small></div></div>
+      ${day.intro?`<p class="day-intro">${esc(day.intro)}</p>`:""}
       <ol class="slots">${day.slots.map(([t,ti,sub,feria]) => ti
         ? `<li class="slot${feria?" feria":""}"><time>${t}</time><p>${esc(ti)}${feria?'<span class="tag" style="display:inline-block;margin-top:0">Feria</span>':""}${sub?`<span>${esc(sub)}</span>`:""}</p></li>`
         : `<li class="slot tbd"><time>${t}</time><p>${esc(sub)}</p></li>`).join("")}</ol>
