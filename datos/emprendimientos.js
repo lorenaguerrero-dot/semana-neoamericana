@@ -121,7 +121,7 @@ window.EMPRENDIMIENTOS = [
     descripcion: "Plataforma virtual de preparación para pruebas de Estado y concursos de mérito (Icfes, Concurso Docente, DIAN, Contraloría) con simulacros y módulos de inglés, ofimática y lectura. Plan básico gratis.",
     estudiante: "Elian David Betancourt Negrete", programa: "Ingeniería de Sistemas", ubicacion: "Córdoba",
     whatsapp: "3205140753", instagram: "rutaeduplus", facebook: "https://www.facebook.com/people/Rutaeduplus/61595109244187/", tiktok: "rutaeduplus", web: "",
-    fotos: ["fotos/rutaedu/1.jpg", "fotos/rutaedu/2.jpg", "fotos/rutaedu/3.jpg"] },
+    fotos: ["fotos/rutaedu/1.jpg", "fotos/rutaedu/2.jpg"] },
 
   { id: "servirapi-app", nombre: "ServiRapi App", categoria: "Tecnología y productos digitales",
     descripcion: "App y plataforma que conecta hogares y empresas con técnicos y profesionales certificados, de forma confiable y garantizada.",
