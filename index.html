@@ -261,6 +261,9 @@ dialog[open]{animation:up .28s ease-out}
 .slot p{margin:2px 0 0;font:700 1.02rem/1.25 var(--display)}
 .slot p span{display:block;font:400 .86rem/1.45 var(--body);color:var(--muted);margin-top:4px}
 .slot.tbd p{color:var(--muted);font-weight:500;font-style:italic}
+.slot-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.slot-links a{font:500 .78rem var(--body);text-decoration:none;color:var(--fg);background:var(--tint);border-radius:999px;padding:4px 10px}
+.slot-links a:hover{background:#d6e7fb}
 .tag{display:inline-block;font:800 .6rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:4px 8px 3px;margin-left:8px;color:#fff;background:var(--orange);vertical-align:3px}
 
 /* ---------- Premios ---------- */
@@ -804,10 +807,11 @@ const AGENDA = [
     ["8:45 – 9:45 pm","No es falta de tiempo, es falta de energía: logística del bienestar personal","Claudia Goyeneche · Profesional en Salud Ocupacional, especialista en Gestión del Desarrollo Humano y Bienestar Social, magíster en Gestión Social Empresarial"]]},
   { d:"12", dia:"Jueves", corto:"Jue", area:"Coordinación de Investigación", tab:"Investigación", c:"var(--neon-ink)", meet:"https://meet.google.com/rny-ttod-jqz", inicio:"5:00 pm",
     intro:"El estudio del mercado laboral y cómo la academia nos muestra la realidad del sector productivo.", slots:[
-    ["5:00 – 6:00 pm","Ponencia del Semillero de Brecha Laboral",""],
-    ["6:15 – 7:15 pm","Webinar: De sufrir a ser feliz en el trabajo","Pablo Andrés Erazo Muñoz · Investigador y PhD (UNAL)"],
-    ["7:30 – 8:30 pm","Think Like an Engineer: pensar, investigar y transformar","Andrea Tijaro"],
-    ["8:45 – 9:45 pm","Mercado internacional: las tecnologías 4.0 en la logística portuaria","Ponencia de José David Giraldo"]]},
+    ["5:00 – 6:00 pm","Ponencia del Semillero Sinergia de Brecha Laboral","Exposición de los primeros resultados de la primera cohorte del Semillero de Investigación «Sinergia» sobre las brechas laborales en Colombia."],
+    ["6:15 – 7:15 pm","Webinar: De sufrir a ser feliz en el trabajo. No es magia, es ciencia","Pablo Andrés Erazo Muñoz · Doctor en Administración de la Universidad Nacional, docente y directivo universitario en Colombia y EE. UU. Conferencista en felicidad laboral e investigador junior (MinCiencias).",false,
+      [["YouTube @felicidadeneltrabajo","https://www.youtube.com/@felicidadeneltrabajo"],["Instagram @felicidadeneltrabajo_","https://www.instagram.com/felicidadeneltrabajo_/"]]],
+    ["7:30 – 8:30 pm","Think Like an Engineer: pensar, investigar y transformar","Andrea Tijaro · Comunicadora social y periodista, pedagoga, especialista en Comunicación Educativa y magíster en Comunicación-Educación, experta en formulación de proyectos de tipo ingenieril."],
+    ["8:45 – 9:45 pm","Webinar: Tecnologías 4.0 aplicadas en logística portuaria","José David Giraldo · Descubre cómo las tecnologías 4.0 están redefiniendo la logística portuaria y aduanera global: las principales técnicas que emplean los puertos inteligentes del mundo para mover mercancías en tiempo récord y reducir costos operativos."]]},
   { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", tab:"Sector Externo", c:"var(--orange-ink)", meet:"https://meet.google.com/cze-swae-uhh", inicio:"6:00 pm",
     intro:"Lanzamiento de la red de networking, la Feria Empresarial Virtual, la premiación y el cierre.", slots:[
     ["6:00 – 7:00 pm","Bienvenida a la Feria Empresarial Virtual","Apertura y exploración por Mónica González · Reflexiones sobre «Emprender sin fronteras: del mundo digital a un negocio real»",true],
@@ -831,8 +835,8 @@ function renderAgenda(){
       <div class="day-head"><span class="d">${day.d}</span><div><b>${day.dia}</b><small>${day.area}</small></div></div>
       ${day.intro?`<p class="day-intro">${esc(day.intro)}</p>`:""}
       ${meetHTML(day)}
-      <ol class="slots">${day.slots.map(([t,ti,sub,feria]) => ti
-        ? `<li class="slot${feria?" feria":""}"><time>${t}</time><p>${esc(ti)}${feria?'<span class="tag" style="display:inline-block;margin-top:0">Feria</span>':""}${sub?`<span>${esc(sub)}</span>`:""}</p></li>`
+      <ol class="slots">${day.slots.map(([t,ti,sub,feria,links]) => ti
+        ? `<li class="slot${feria?" feria":""}"><time>${t}</time><p>${esc(ti)}${feria?'<span class="tag" style="display:inline-block;margin-top:0">Feria</span>':""}${sub?`<span>${esc(sub)}</span>`:""}</p>${links?`<div class="slot-links">${links.map(([tx,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(tx)}</a>`).join("")}</div>`:""}</li>`
         : `<li class="slot tbd"><time>${t}</time><p>${esc(sub)}</p></li>`).join("")}</ol>
     </article>`).join("");
 }
