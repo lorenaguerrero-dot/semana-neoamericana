@@ -269,6 +269,16 @@ dialog[open]{animation:up .28s ease-out}
 .prize h3{font-size:1.7rem;font-weight:900;text-transform:uppercase}
 .prize p{margin:0;color:var(--muted);font-size:.95rem}
 .prize p b{color:var(--fg)}
+.reg-actions{display:grid;gap:10px;justify-items:start}
+.tyc{font:700 .86rem/1.3 var(--display);color:var(--fg);text-underline-offset:3px}
+.tyc-card{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--fg);border:2px solid var(--fg);border-radius:var(--r);background:#fff4ee;padding:16px 18px;margin-bottom:22px;transition:transform .15s,box-shadow .15s}
+.tyc-card:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--orange)}
+.tyc-card > span:nth-child(2){flex:1;min-width:0}
+.tyc-card b{display:block;font:800 1.08rem/1.2 var(--display)}
+.tyc-card b + span{display:block;font-size:.88rem;color:var(--muted);margin-top:4px}
+.tyc-ic{flex:none;width:42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font:800 1.3rem/1 var(--display)}
+.tyc-card .arrow{flex:none;display:inline-block;width:18px;height:2px;background:currentColor;position:relative}
+.tyc-card .arrow::after{content:"";position:absolute;right:-1px;top:-4px;width:8px;height:8px;border:2px solid currentColor;border-left:0;border-bottom:0;transform:rotate(45deg)}
 .prize-list{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.92rem;color:var(--muted)}
 .prize-list b{display:inline-block;min-width:30px;font-family:var(--display);color:var(--orange-ink)}
 .prize .when{font:800 .8rem var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--orange-ink)}
@@ -351,6 +361,7 @@ footer img{height:30px;width:auto}
       <a href="#agenda">Agenda</a>
       <a href="#vitrina">Stands</a>
       <a href="#premios">Premios</a>
+      <a href="terminos.html">Términos</a>
     </nav>
     <a class="btn btn-primary cta" id="ctaTop" href="#agenda">Regístrate</a>
   </div>
@@ -395,7 +406,10 @@ footer img{height:30px;width:auto}
         <b>Regístrate para participar</b>
         <span>Inscríbete en las actividades de la semana y concursa por los premios de la búsqueda del tesoro y la trivia.</span>
       </div>
-      <a class="btn btn-primary" id="regBtn" href="#" target="_blank" rel="noopener">Ir al formulario de registro <span class="arrow" aria-hidden="true"></span></a>
+      <div class="reg-actions">
+        <a class="btn btn-primary" id="regBtn" href="#" target="_blank" rel="noopener">Ir al formulario de registro <span class="arrow" aria-hidden="true"></span></a>
+        <a class="tyc" href="terminos.html">Términos y condiciones de premios e incentivos</a>
+      </div>
     </div>
     <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Días"></div>
     <div class="days" id="days"></div>
@@ -442,6 +456,12 @@ footer img{height:30px;width:auto}
       <p class="eyebrow">Incentivos y premiación</p>
       <h2>Participa y <em>gana</em></h2>
     </div>
+    <a class="tyc-card" href="terminos.html">
+      <span class="tyc-ic" aria-hidden="true">§</span>
+      <span><b>Términos y condiciones: premiaciones e incentivos académicos</b>
+      <span>Ingreso con correo institucional, mínimo 60 minutos de conexión, nivelación sobre 4,0 hasta el 27 de noviembre y entrega de premios desde el 16 de noviembre.</span></span>
+      <span class="arrow" aria-hidden="true"></span>
+    </a>
     <div class="prizes">
       <article class="prize">
         <p class="when">Toda la semana · Premiación vie 8:30 pm</p>
@@ -489,7 +509,7 @@ footer img{height:30px;width:auto}
 <footer>
   <div class="wrap">
     <img src="img/logo-nueva-america-blanco.png" alt="Nueva América, Fundación de Educación Superior" width="874" height="150" loading="lazy">
-    <span>XXI Semana Neoamericana &amp; VI Internacional · IES vigilada por MinEducación</span>
+    <span>XXI Semana Neoamericana &amp; VI Internacional · IES vigilada por MinEducación · <a href="terminos.html" style="color:#fff">Términos y condiciones</a></span>
   </div>
 </footer>
 
