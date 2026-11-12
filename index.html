@@ -196,6 +196,7 @@ section{padding-block:52px}
 a.soc:hover{background:#d6e7fb}
 .soc em{font-style:normal;color:var(--muted)}
 .wa{display:flex;align-items:center;justify-content:center;gap:8px;font:700 .98rem/1 var(--display);text-decoration:none;color:#fff;background:var(--wa);border-radius:12px;padding:13px 14px 11px;border:0;cursor:pointer;width:100%}
+.wa.web{background:var(--navy);color:#fff}
 .wa svg{width:18px;height:18px;margin-top:-2px}
 .wa[aria-disabled="true"]{background:#e2f7e9;color:#13703a;cursor:help}
 .empty{grid-column:1/-1;text-align:center;padding:40px 16px;border:2px dashed var(--line);border-radius:var(--r);color:var(--muted);background:var(--surface)}
@@ -564,7 +565,10 @@ function socialsHTML(e){
     ? `<span class="soc" title="Enlace de ejemplo"><em>${s.red}</em> ${esc(s.txt)}</span>`
     : `<a class="soc" href="${esc(s.url)}" target="_blank" rel="noopener"><em>${s.red}</em> ${esc(s.txt)}</a>`).join("");
 }
+const LINK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
 function waHTML(e){
+  if (e.contacto && e.contacto.url) return `<a class="wa web" href="${esc(e.contacto.url)}" target="_blank" rel="noopener">${LINK_ICON} ${esc(e.contacto.texto||"Contactar")}</a>`;
+  if (e.whatsappUrl) return `<a class="wa" href="${esc(e.whatsappUrl)}" target="_blank" rel="noopener">${WA_ICON} Escribir por WhatsApp</a>`;
   if (!e.whatsapp) return "";
   return e.ejemplo
     ? `<button type="button" class="wa" aria-disabled="true" data-demo>${WA_ICON} WhatsApp (ejemplo)</button>`

@@ -11,6 +11,8 @@
    whatsapp    número de 10 dígitos o con indicativo
    instagram / facebook / tiktok   usuario o enlace completo
    web         enlace a página web o tienda
+   whatsappUrl (opcional) enlace de WhatsApp propio, con su mensaje
+   contacto    (opcional) { url, texto }: reemplaza el botón de WhatsApp
    fotos       hasta 3 rutas: ["fotos/mi-id/1.jpg", ...]
    logo        (opcional) "fotos/mi-id/logo.jpg"
    ========================================================= */
@@ -18,8 +20,9 @@ window.EMPRENDIMIENTOS = [
   { id: "appuebliar", nombre: "apPuebliar", categoria: "Tecnología y productos digitales",
     descripcion: "App móvil para descubrir lugares mágicos de Colombia: una guía de municipios para planear viajes y aventuras que además conecta a comerciantes con una comunidad de viajeros.",
     estudiante: "Mauricio Penagos", programa: "Administración de Empresas", ubicacion: "Antioquia",
-    whatsapp: "3004434363", instagram: "appuebliar.col", facebook: "", tiktok: "", web: "",
-    fotos: ["fotos/appuebliar/1.jpg", "fotos/appuebliar/2.jpg", "fotos/appuebliar/3.jpg"] },
+    whatsapp: "", instagram: "appuebliar.col", facebook: "", tiktok: "", web: "",
+    contacto: { url: "https://appuebliar.com/enlaces/", texto: "Contactar" },
+    fotos: ["fotos/appuebliar/1.jpg", "fotos/appuebliar/2.jpg", "fotos/appuebliar/3.jpg", "fotos/appuebliar/4.jpg"], logo: "fotos/appuebliar/logo.jpg" },
 
   { id: "motitas-time", nombre: "Motitas Time", categoria: "Moda y accesorios",
     descripcion: "Fabricación y venta de bolsos, carteras y cosmetiqueras en PVC, sintéticos y charoles, combinando materiales y colores.",
@@ -36,8 +39,8 @@ window.EMPRENDIMIENTOS = [
   { id: "creative", nombre: "CREATIVE", categoria: "Artesanías",
     descripcion: "Llaveros, esferos y cerámicas en resina, totalmente personalizados y únicos.",
     estudiante: "Solangue Marcela Sánchez Fonseca", programa: "Contaduría Pública", ubicacion: "Bogotá, D. C.",
-    whatsapp: "3219765715", instagram: "almacreative", facebook: "", tiktok: "", web: "",
-    fotos: [] },
+    whatsapp: "3219791806", instagram: "almacreative", facebook: "", tiktok: "", web: "",
+    fotos: ["fotos/creative/1.jpg", "fotos/creative/2.jpg", "fotos/creative/3.jpg", "fotos/creative/4.jpg"], logo: "fotos/creative/logo.jpg" },
 
   { id: "econet-marketing", nombre: "Econet Marketing", categoria: "Servicios",
     descripcion: "Planes de manejo de redes sociales y campañas en Meta Ads para negocios que quieren crecer en digital.",
@@ -108,7 +111,8 @@ window.EMPRENDIMIENTOS = [
   { id: "mfm-frutos-secos", nombre: "MFM Frutos Secos", categoria: "Gastronomía y alimentos",
     descripcion: "Frutos secos, semillas, frutas deshidratadas y productos con chocolate. Sabor natural y calidad para disfrutar y compartir.",
     estudiante: "María Fernanda Mora Rodríguez", programa: "Administración de Empresas", ubicacion: "Bogotá, D. C.",
-    whatsapp: "3219374258", instagram: "", facebook: "", tiktok: "", web: "",
+    whatsapp: "3161598881", instagram: "frutossecosmfm", facebook: "", tiktok: "", web: "",
+    whatsappUrl: "https://wa.me/573161598881?text=%C2%A1Hola!%20%F0%9F%91%8B%20Quiero%20conocer%20los%20productos%20de%20MFM%20Frutos%20Secos%20y%20realizar%20un%20pedido.%20%F0%9F%8C%B0%F0%9F%92%9A",
     fotos: [] },
 
   { id: "mundo-pantuflas", nombre: "Mundo Pantuflas", categoria: "Moda y accesorios",
@@ -120,7 +124,8 @@ window.EMPRENDIMIENTOS = [
   { id: "rutaedu", nombre: "RutaEdu+", categoria: "Servicios",
     descripcion: "Plataforma virtual de preparación para pruebas de Estado y concursos de mérito (Icfes, Concurso Docente, DIAN, Contraloría) con simulacros y módulos de inglés, ofimática y lectura. Plan básico gratis.",
     estudiante: "Elian David Betancourt Negrete", programa: "Ingeniería de Sistemas", ubicacion: "Córdoba",
-    whatsapp: "3205140753", instagram: "rutaeduplus", facebook: "https://www.facebook.com/people/Rutaeduplus/61595109244187/", tiktok: "rutaeduplus", web: "",
+    whatsapp: "", instagram: "rutaeduplus", facebook: "https://www.facebook.com/people/Rutaeduplus/61595109244187/", tiktok: "rutaeduplus", web: "",
+    contacto: { url: "https://www.rutaeduplus.com", texto: "Visitar página web" },
     fotos: ["fotos/rutaedu/1.jpg", "fotos/rutaedu/2.jpg"] },
 
   { id: "servirapi-app", nombre: "ServiRapi App", categoria: "Tecnología y productos digitales",
