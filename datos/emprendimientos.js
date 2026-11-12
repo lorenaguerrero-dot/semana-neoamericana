@@ -14,7 +14,7 @@
    whatsappUrl (opcional) enlace de WhatsApp propio, con su mensaje
    contacto    (opcional) { url, texto }: reemplaza el botón de WhatsApp
    fotos       hasta 3 rutas: ["fotos/mi-id/1.jpg", ...]
-   logo        (opcional) "fotos/mi-id/logo.jpg"
+   (el logo, si lo hay, va como primera foto: fotos/mi-id/1.jpg)
    ========================================================= */
 window.EMPRENDIMIENTOS = [
   { id: "appuebliar", nombre: "apPuebliar", categoria: "Tecnología y productos digitales",
@@ -22,7 +22,7 @@ window.EMPRENDIMIENTOS = [
     estudiante: "Mauricio Penagos", programa: "Administración de Empresas", ubicacion: "Antioquia",
     whatsapp: "", instagram: "appuebliar.col", facebook: "", tiktok: "", web: "",
     contacto: { url: "https://appuebliar.com/enlaces/", texto: "Contactar" },
-    fotos: ["fotos/appuebliar/1.jpg", "fotos/appuebliar/2.jpg", "fotos/appuebliar/3.jpg", "fotos/appuebliar/4.jpg"], logo: "fotos/appuebliar/logo.jpg" },
+    fotos: ["fotos/appuebliar/1.jpg", "fotos/appuebliar/2.jpg", "fotos/appuebliar/3.jpg", "fotos/appuebliar/4.jpg"] },
 
   { id: "motitas-time", nombre: "Motitas Time", categoria: "Moda y accesorios",
     descripcion: "Fabricación y venta de bolsos, carteras y cosmetiqueras en PVC, sintéticos y charoles, combinando materiales y colores.",
@@ -40,7 +40,7 @@ window.EMPRENDIMIENTOS = [
     descripcion: "Llaveros, esferos y cerámicas en resina, totalmente personalizados y únicos.",
     estudiante: "Solangue Marcela Sánchez Fonseca", programa: "Contaduría Pública", ubicacion: "Bogotá, D. C.",
     whatsapp: "3219791806", instagram: "almacreative", facebook: "", tiktok: "", web: "",
-    fotos: ["fotos/creative/1.jpg", "fotos/creative/2.jpg", "fotos/creative/3.jpg", "fotos/creative/4.jpg"], logo: "fotos/creative/logo.jpg" },
+    fotos: ["fotos/creative/1.jpg", "fotos/creative/2.jpg", "fotos/creative/3.jpg", "fotos/creative/4.jpg"] },
 
   { id: "econet-marketing", nombre: "Econet Marketing", categoria: "Servicios",
     descripcion: "Planes de manejo de redes sociales y campañas en Meta Ads para negocios que quieren crecer en digital.",
@@ -52,7 +52,7 @@ window.EMPRENDIMIENTOS = [
     descripcion: "Piezas únicas en resina epóxica que combinan lujo, diseño y personalidad: espejos, relojes y cuadros que hacen la diferencia.",
     estudiante: "Sergio Daniel Santana Velásquez", programa: "Contaduría Pública", ubicacion: "Bogotá, D. C.",
     whatsapp: "3162232158", instagram: "epoxidos", facebook: "", tiktok: "epoxidos1", web: "",
-    fotos: ["fotos/epoxidos/1.jpg", "fotos/epoxidos/2.jpg", "fotos/epoxidos/3.jpg"], logo: "fotos/epoxidos/logo.jpg" },
+    fotos: ["fotos/epoxidos/1.jpg", "fotos/epoxidos/2.jpg", "fotos/epoxidos/3.jpg", "fotos/epoxidos/4.jpg"] },
 
   { id: "evidence-sas", nombre: "Evidence SAS", categoria: "Servicios",
     descripcion: "Agencia de marketing: hacemos contenido que las personas recuerdan.",
@@ -88,7 +88,7 @@ window.EMPRENDIMIENTOS = [
     descripcion: "Diseño de cejas y pestañas: laminado de cejas, lifting de pestañas, pestañas con henna, pelo a pelo y depilación.",
     estudiante: "Leidy Johana Orozco Cardona", programa: "Contaduría Pública", ubicacion: "Caldas",
     whatsapp: "3113130661", instagram: "leidyjohana.studio", facebook: "", tiktok: "", web: "",
-    fotos: ["fotos/leidyjohana-studio/1.jpg", "fotos/leidyjohana-studio/2.jpg", "fotos/leidyjohana-studio/3.jpg"], logo: "fotos/leidyjohana-studio/logo.jpg" },
+    fotos: ["fotos/leidyjohana-studio/1.jpg", "fotos/leidyjohana-studio/2.jpg", "fotos/leidyjohana-studio/3.jpg", "fotos/leidyjohana-studio/4.jpg"] },
 
   { id: "lumiere-du-monde", nombre: "Lumière du monde", categoria: "Artesanías",
     descripcion: "Velas aromáticas, decorativas, de moldes y recordatorios para eventos.",
@@ -138,7 +138,7 @@ window.EMPRENDIMIENTOS = [
     descripcion: "Desarrollo de software a la medida: transformamos ideas en herramientas digitales que optimizan procesos y resuelven problemas reales de personas y empresas.",
     estudiante: "Jorge Andrei Hernández Rodríguez", programa: "Ingeniería de Sistemas", ubicacion: "Bogotá, D. C.",
     whatsapp: "3052851155", instagram: "softlegacy", facebook: "", tiktok: "", web: "https://softlegacy.vercel.app",
-    fotos: ["fotos/softlegacy/1.jpg", "fotos/softlegacy/2.jpg"], logo: "fotos/softlegacy/logo.jpg" },
+    fotos: ["fotos/softlegacy/1.jpg", "fotos/softlegacy/2.jpg"] },
 
   { id: "universal-comercializadora", nombre: "Universal Comercializadora SAS", categoria: "Comercio e industria",
     descripcion: "Comercialización de perfilería de aluminio para ventanería y divisiones de baño, y lámina de aluminio para distintos sectores de la industria.",
