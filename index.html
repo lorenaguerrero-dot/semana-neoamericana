@@ -467,20 +467,22 @@ footer img{height:30px;width:auto}
     </a>
     <div class="prizes">
       <article class="prize">
-        <p class="when">Toda la semana · Premiación vie 8:30 pm</p>
+        <p class="when">Toda la semana · Premiación vie 8:10 pm</p>
         <h3>Búsqueda del tesoro</h3>
-        <p>En cada actividad hay figuras u objetos ocultos. Toma captura de pantalla de cada uno y envíalas. Quienes encuentren más suben al podio de oro, plata y bronce.</p>
-        <p><b>Premio:</b> tarjeta de servicio de streaming + bono D1 de $100.000.</p>
+        <p>Durante los 3 días hubo figuras doradas ocultas en las actividades. El viernes se verifican en una actividad tipo Kahoot y los mejores suben al podio de oro, plata y bronce.</p>
+        <ul class="prize-list">
+          <li><b>1.º</b> $200.000 entre bono de compra, tarjeta de streaming o producto de la feria.</li>
+          <li><b>2.º</b> $150.000.</li>
+          <li><b>3.º</b> $50.000.</li>
+        </ul>
         <div class="podium" aria-label="Podio: oro, plata y bronce"><div class="s"><span>2</span>Plata</div><div class="g"><span>1</span>Oro</div><div class="b"><span>3</span>Bronce</div></div>
       </article>
       <article class="prize">
-        <p class="when">Viernes 13 · 7:15 pm</p>
+        <p class="when">Viernes 13 · 7:40 pm</p>
         <h3>Trivia de emprendimientos</h3>
         <p>Un Kahoot sobre los stands de esta feria: recórrelos antes de jugar.</p>
         <ul class="prize-list">
-          <li><b>1.º</b> Dos productos de tu emprendimiento favorito con envío incluido + bono de streaming.</li>
-          <li><b>2.º</b> Un producto de tu emprendimiento favorito con envío incluido + bono D1.</li>
-          <li><b>3.º</b> Tarjeta de servicio de streaming (Spotify, Disney, Netflix o Fortnite).</li>
+          <li><b>Premios</b> Bonos de hasta $200.000, tarjetas de streaming y productos de los emprendimientos.</li>
         </ul>
         <div class="podium" aria-label="Podio de la trivia"><div class="s"><span>2</span>Plata</div><div class="g"><span>1</span>Oro</div><div class="b"><span>3</span>Bronce</div></div>
       </article>
@@ -814,9 +816,11 @@ const AGENDA = [
     ["8:45 – 9:45 pm","Webinar: Tecnologías 4.0 aplicadas en logística portuaria","José David Giraldo · Descubre cómo las tecnologías 4.0 están redefiniendo la logística portuaria y aduanera global: las principales técnicas que emplean los puertos inteligentes del mundo para mover mercancías en tiempo récord y reducir costos operativos."]]},
   { d:"13", dia:"Viernes", corto:"Vie", area:"Coordinación de Sector Externo", tab:"Sector Externo", c:"var(--orange-ink)", meet:"https://meet.google.com/cze-swae-uhh", inicio:"6:00 pm",
     intro:"Lanzamiento de la red de networking, la Feria Empresarial Virtual, la premiación y el cierre.", slots:[
-    ["6:00 – 7:00 pm","Bienvenida a la Feria Empresarial Virtual","Apertura y exploración por Mónica González · Reflexiones sobre «Emprender sin fronteras: del mundo digital a un negocio real»",true],
-    ["7:15 – 8:15 pm","Trivia de emprendimientos y podio de ganadores","Kahoot sobre los stands de la feria"],
-    ["8:30 – 9:30 pm","Premiación de la búsqueda del tesoro y cierre","Podio de oro, plata y bronce"]]}
+    ["6:00 – 7:00 pm","Bienvenida a la Feria Empresarial Virtual y reflexiones","Apertura y exploración de emprendimientos por Mónica González, junto a reflexiones sobre «Emprender sin fronteras: del mundo digital a un negocio real».",true],
+    ["7:00 – 7:20 pm","Premiación: Ruleta de asistencia del día 1","Sorteo en vivo entre los participantes registrados en la jornada de Bienestar. Primer puesto: bono de compra de $100.000. Segundo puesto: bono de $50.000."],
+    ["7:20 – 7:40 pm","Premiación: actividad de investigación del día 2","Anuncio oficial de los dos ganadores de la actividad «Think Like an Engineer». Primer puesto: bono de compra de $100.000. Segundo puesto: bono de $50.000."],
+    ["7:40 – 8:10 pm","Trivia de emprendimientos y podio de ganadores","Demuestra lo aprendido en la Feria Empresarial Virtual y compite en tiempo real por bonos de hasta $200.000, tarjetas de streaming y productos de los emprendimientos."],
+    ["8:10 – 8:30 pm","Premiación de la búsqueda del tesoro y cierre oficial","Verificación de las figuras doradas ocultas durante los 3 días, en una actividad tipo Kahoot. Primer puesto: $200.000 entre bono de compra, tarjeta de streaming o producto de la feria. Segundo puesto: $150.000. Tercer puesto: $50.000."]]}
 ];
 let hoyISO = ""; try { hoyISO = new Intl.DateTimeFormat("en-CA",{timeZone:"America/Bogota"}).format(new Date()); } catch(_){}
 const hoyN = hoyISO.startsWith("2026-11-") ? String(+hoyISO.slice(8,10)) : "";
